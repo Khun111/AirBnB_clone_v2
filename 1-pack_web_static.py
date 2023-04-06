@@ -6,6 +6,7 @@ import os
 
 @runs_once
 def do_pack():
+    '''Fabric that generates a .tgz archive from the contents of web_static'''
     try:
         local('mkdir -p versions')
 
