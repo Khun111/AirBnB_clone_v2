@@ -11,7 +11,7 @@ def do_pack():
 
         time = datetime.now().strftime('%Y%m%d%H%M%S')
         archive_name = 'web_static_{}.tgz'.format(time)
-        local('tar -cvsf versions/{} web_static'.format(archive_name))
+        local('tar -cvzf versions/{} web_static'.format(archive_name))
         if os.path.exists('versions/{}'.format(archive_name)):
             return 'versions/{}'.format(archive_name)
         else:
