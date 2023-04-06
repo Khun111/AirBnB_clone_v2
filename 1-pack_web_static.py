@@ -1,19 +1,20 @@
 #!/usr/bin/python3
 from fabric.api import local
+from fabric.decorators import runs_once
 from datetime import datetime
 import os
 
-if __name__ == '__main__':
-    def do_pack():
-        try:
-            local('mkdir versions')
+@runs_once
+def do_pack():
+    try:
+        local('mkdir -p versions')
 
-            time = datetime.now().strftime('%Y%m%d%H%M%S')
-            archive_name = f'web_static_{time}.tgz'
-            local(f'tar -cvsf versions/{archive_name} web_static')
-            if os.path.exists(f'versions/{archive_name}')
-                return f'versions/{archive_name}'
-            else:
-                return None
-        except:
-                return None
+        time = datetime.now().strftime('%Y%m%d%H%M%S')
+        archive_name = 'web_static_{}.tgz'.format(time)
+        local('tar -cvsf versions/{} web_static'.format(archive_name))
+        if os.path.exists('versions/{}'.format(archive_name)):
+            return 'versions/{}'.format(archive_name)
+        else:
+            return None
+    except Exception as no:
+            return None
