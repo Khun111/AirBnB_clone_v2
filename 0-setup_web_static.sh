@@ -4,6 +4,7 @@ apt-get update
 if ! command -v nginx &> /dev/null; then
   sudo apt-get install -y nginx;
 fi
+sudo ufw allow 'Nginx HTTP'
 if [ ! -d '/data/' ]; then
   sudo mkdir /data/;
 fi
