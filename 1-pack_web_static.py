@@ -5,6 +5,7 @@ from fabric.decorators import runs_once
 from datetime import datetime
 import os
 
+
 @runs_once
 def do_pack():
     '''Fabric that generates a .tgz archive from the contents of web_static'''
@@ -19,4 +20,4 @@ def do_pack():
         else:
             return None
     except Exception as no:
-            return None
+        return None
