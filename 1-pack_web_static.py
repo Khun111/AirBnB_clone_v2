@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+'''Generate tgz archive'''
 from fabric.api import local
 from fabric.decorators import runs_once
 from datetime import datetime
