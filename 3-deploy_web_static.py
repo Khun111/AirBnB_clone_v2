@@ -21,6 +21,7 @@ def do_pack():
     except Exception as no:
         return None
 
+
 def do_deploy(archive_path):
     '''Function to distribute to webservers'''
     if not os.path.exists(archive_path):
@@ -43,6 +44,7 @@ def do_deploy(archive_path):
         return True
     except Exception as e:
         return False
+
 
 def deploy():
     '''Function that creates and distributes archive_d'''
