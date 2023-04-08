@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 '''Module Fabric script that distributes an archive to your web server'''
 import os
-from fabric.api import env, sudo
+from fabric.api import *
 from datetime import datetime
 env.hosts = ['54.144.144.194', '100.25.140.47']
 env.user = 'ubuntu'
