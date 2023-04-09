@@ -55,5 +55,5 @@ content => "server {\n    listen 80 default_server;\n    listen [::]:80 default_
 }
 
 exec { 'nginx restart':
-path => '/etc/init.d/'
+path => '/etc/init.d/',
 }
