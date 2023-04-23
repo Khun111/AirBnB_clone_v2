@@ -20,7 +20,7 @@ def display():
 def handlevars(text):
     '''Run on route'''
     text = text.replace('_', ' ')
-    return f'C {text}'
+    return 'C {}'.format(text)
 
 
 if __name__ == '__main__':
