@@ -4,8 +4,8 @@ import uuid
 from datetime import datetime
 from sqlalchemy import Column, String, DateTime
 from . import HBNB_TYPE_STORAGE
+from sqlalchemy.orm import declarative_base
 if HBNB_TYPE_STORAGE == 'db':
-    from sqlalchemy.orm import declarative_base
     Base = declarative_base()
 else:
     Base = object
