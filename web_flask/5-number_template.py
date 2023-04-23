@@ -20,7 +20,7 @@ def display():
 def handlevars(text):
     '''Run on route'''
     text = text.replace('_', ' ')
-    return f'C {text}'
+    return 'C {}'.format(text)
 
 
 @myapp.route('/python/<text>', strict_slashes=False)
@@ -28,13 +28,13 @@ def handlevars(text):
 def pyvars(text='is_cool'):
     '''Run on route'''
     text = text.replace('_', ' ')
-    return f'Python {text}'
+    return 'Python {}'.format(text)
 
 
 @myapp.route('/number/<int:n>', strict_slashes=False)
 def checknum(n):
     '''Run on route'''
-    return f'{n} is a number'
+    return '{} is a number'.format(n)
 
 
 @myapp.route('/number_template/<int:n>', strict_slashes=False)
